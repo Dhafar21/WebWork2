@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Scaler</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Recipe Scaler</h1>
+      <p class="subtitle">Paste a recipe, scale it instantly</p>
+    </header>
+
+    <section class="section paste-section">
+      <label class="section-label" for="recipe-input">Paste Recipe</label>
+      <textarea id="recipe-input" class="recipe-input" placeholder="Paste your recipe here...&#10;&#10;2 cups flour&#10;1 tbsp sugar&#10;3 eggs&#10;1/2 tsp salt&#10;&#10;1. Mix dry ingredients&#10;2. Bake for 25 minutes" spellcheck="false"></textarea>
+    </section>
+
+    <div class="control-row">
+      <section class="section servings-section">
+        <label class="section-label">Servings</label>
+        <div class="stepper">
+          <button id="servings-minus" class="stepper-btn" aria-label="Decrease servings">&minus;</button>
+          <div class="stepper-input-wrap">
+            <input id="servings-input" type="number" value="4" min="1" max="999">
+            <span id="original-servings" class="original-servings"></span>
+          </div>
+          <button id="servings-plus" class="stepper-btn" aria-label="Increase servings">+</button>
+        </div>
+      </section>
+
+      <section class="section unit-section">
+        <label class="section-label">Units</label>
+        <div class="unit-toggle">
+          <button id="unit-us" class="unit-btn active">US</button>
+          <button id="unit-metric" class="unit-btn">Metric</button>
+        </div>
+      </section>
+    </div>
+
+    <section class="section ingredients-section" id="ingredients-section" style="display:none">
+      <h2 class="section-heading">Ingredients</h2>
+      <ul id="ingredient-list" class="ingredient-list"></ul>
+    </section>
+
+    <section class="section instructions-section" id="instructions-section" style="display:none">
+      <h2 class="section-heading">Instructions</h2>
+      <ol id="instruction-list" class="instruction-list"></ol>
+    </section>
+
+    <footer class="app-footer">
+      <p>All data stays on your device &middot; No login required</p>
+    </footer>
+  </div>
+
+  <div id="timer-container" class="timer-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
